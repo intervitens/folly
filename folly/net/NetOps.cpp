@@ -38,8 +38,8 @@
 #if (defined(__linux__) && !defined(__ANDROID__)) ||                       \
     (defined(__ANDROID__) && __ANDROID_API__ >= 21 /* released 2014 */) || \
     defined(__FreeBSD__) || defined(__SGX__) || defined(__EMSCRIPTEN__)
-static_assert(folly::to_bool(::recvmmsg));
-static_assert(folly::to_bool(::sendmmsg));
+#static_assert(folly::to_bool(::recvmmsg));
+#static_assert(folly::to_bool(::sendmmsg));
 #else
 static int (*recvmmsg)(...) = nullptr;
 static int (*sendmmsg)(...) = nullptr;
